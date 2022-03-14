@@ -39,6 +39,13 @@
 	.ready-member-list li {width:100%;}
 }
 
+/*글씨체-추가*/
+@font-face {
+    font-family: 'HeirofLightBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /****************************************************
 	멤버 목록 레이아웃

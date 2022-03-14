@@ -40,6 +40,32 @@ if($ad['ad_use_status']) {
 	}
 }
 
+//페어 정보
+function Console_log($data){
+	echo '<script>';
+	echo 'console.dir('. json_encode( $data ) .')';
+	echo '</script>';
+}
+
+$pairArr = sql_query("select * from avo_character", false);
+$pairResult = sql_fetch_array($pairArr);
+
+//그리고 한 번 호출된 것 위에서 console.log하면 아래에서 안먿는듯... 여기서 주석 풀면 아래 select에 값 안들감;
+//Console_log($pairArr);
+Console_log($pairResult);
+
+//array 안에 담아도 꼭.. for 돌려줘야 하는 듯
+// for($a = 0; $row = sql_fetch_array($pairArr); $a++){
+// 	// row변수안에 배열로 값이들어온다.
+// 	echo '<script>';
+// 	echo 'console.dir('. json_encode( $row) .')';
+// 	echo '</script>';
+// 	//  row 변수의 이름 키값에 해당하는 Value 를 가져옴.
+
+// 	 }
+
+
+
 
 /** 세력 정보 **/
 if($config['cf_side_title']) {
@@ -150,6 +176,16 @@ if($w == "") {
 				<input type="text" name="ch_name" value="<?php echo $ch['ch_name'] ?>" id="ch_name" >
 			</td>
 		</tr>
+
+		<!-- 타 러너 선택(pair) -->
+		<tr>
+			<select>
+			<?for($a = 0; $row = sql_fetch_array($pairArr); $a++) { 
+				echo '<option value="' .$row['ch_id']. '">' .$row['ch_name']. '</option>';
+			 } ?>
+			</select>
+		</tr>
+
 <? if($config['cf_side_title']) { ?>
 		<tr>
 			<th><?=$config['cf_side_title']?></th>
