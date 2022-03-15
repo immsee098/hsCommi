@@ -41,6 +41,7 @@ if($ad['ad_use_status']) {
 }
 
 //페어 정보
+//후에 페어 정보 기반으로 페어 스탯 불러와야함
 function Console_log($data){
 	echo '<script>';
 	echo 'console.dir('. json_encode( $data ) .')';
