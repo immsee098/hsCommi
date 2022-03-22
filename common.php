@@ -408,7 +408,7 @@ if ($_SESSION['ss_mb_id']) { // 로그인중이라면
     }
 } else {
     // 자동로그인 ---------------------------------------
-    // 회원아이디가 쿠키에 저장되어 있다면 (3.27)
+    // 회원아이디가 쿠키에 저장되어 있다면 (3.27)fz
     if ($tmp_mb_id = get_cookie('ck_mb_id')) {
 
         $tmp_mb_id = substr(preg_replace("/[^a-zA-Z0-9_]*/", "", $tmp_mb_id), 0, 20);

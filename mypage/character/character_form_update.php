@@ -187,7 +187,7 @@ if($w == '') {
 }
 
 
-// --------------------- 추가 프로필 데이터
+// --------------------- 추가 프로필 데이터  
 // 추가 항목 값 가져오기
 $av_result = sql_query("select * from {$g5['value_table']} where ch_id = '{$ch_id}' and ar_theme= '{$config['cf_theme']}'");
 for($i = 0; $row = sql_fetch_array($av_result); $i++) {

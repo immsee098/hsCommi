@@ -12,8 +12,6 @@ if($in_id) {
 // 추가 항목 설정 데이터
 // -- 권한 설정에 따라 가져오기
 // -- 관리자 권한 제외 하고 가져온다.
-// 후에 파트너 값에 따라 체력 불러오기
-//
 $ch_ar = array();
 $str_secret = ' where (1) ';
 
@@ -55,7 +53,7 @@ $pairResult = sql_fetch_array($pairArr);
 
 //그리고 한 번 호출된 것 위에서 console.log하면 아래에서 안먿는듯... 여기서 주석 풀면 아래 select에 값 안들감;
 //Console_log($pairArr);
-Console_log($pairResult);
+// Console_log($pairResult);
 
 //array 안에 담아도 꼭.. for 돌려줘야 하는 듯
 // for($a = 0; $row = sql_fetch_array($pairArr); $a++){
@@ -314,7 +312,7 @@ if($w == "") {
 			<col />
 		</colgroup>
 		<tbody>
-	<? for($i=0; $i < count($ch_ar); $i++) { 
+	<? for($i=0; $i < 2; $i++) {  // $i < count($ch_ar) 본래 이거 
 		$ar = $ch_ar[$i];
 		$key = $ar['ar_code'];
 
@@ -369,7 +367,78 @@ if($w == "") {
 						<textarea name="av_value[<?=$i?>]" <?=$style?>><?php echo $ch[$key] ?></textarea>
 
 					<? } else if($ar['ar_type'] == 'select') { 
-						$option = explode("||", $ar['ar_text']);
+						 $option = explode("||", $ar['ar_text']);
+					?>
+						<select name="av_value[<?=$i?>]" <?=$style?>>
+						<? for($j=0; $j < count($option); $j++) { ?>
+							<option value="<?=$option[$j]?>" <?=$option[$j] == $ch[$key] ? "selected" : ""?>><?=$option[$j]?></option>
+						<? } ?>
+						</select>
+					<? } ?>
+
+					</td>
+				<? } ?>
+			</tr>
+	<? } ?>
+<? } ?>
+
+
+<? for($i=1; $i < 3; $i++) {  // $i < count($ch_ar) 본래 이거 
+		$ar = $ch_ar[$i];
+		$key = $ar['ar_code'];
+
+		$style = "";
+		if($ar['ar_size']) {
+			if($ar['ar_type'] != 'textarea') 
+				$style = "style = 'width: {$ar['ar_size']}px;'";
+			else
+				$style = "style = 'width: 100%; height: {$ar['ar_size']}px;'";
+		} else {
+			$style = "style = 'width: 100%;'";
+		}
+	?>
+			<tr>
+				<th>
+					<input type="hidden" name="ar_code[<?=$i?>]" value="<?=$ar['ar_code']?>" />
+					<input type="hidden" name="ar_theme[<?=$i?>]" value="<?=$config['cf_theme']?>" />
+					<?=$ar['ar_name']?>
+				</th>
+				<?
+					if($ar['ar_type'] == 'file' || $ar['ar_type'] == 'url') { 
+						// 이미지 타입의 파일
+				?>
+
+					<td>
+						<?php echo help($ar['ar_help']) ?>
+					<? if($ar['ar_type'] == 'url') { ?>
+						<input type="text" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" <?=$style?> />
+					<? } else { 
+						// 직접 업로드
+					?>
+						<input type="file" name="av_value_file[<?=$i?>]" />
+						<input type="hidden" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" />
+					<? } ?>
+					<? if($ch[$key]) { ?>
+						<a href="<?=$ch[$key]?>" class="ui-btn" target="_blank">
+							<?=$ar['ar_name']?> 확인
+						</a>
+					<? } ?>
+					</td>
+
+				<? } else { ?>
+					<td>
+						<?php echo help($ar['ar_help']) ?>
+					<?
+						if($ar['ar_type'] == 'text') { 
+					?>
+						<input type="text" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" <?=$style?> /> <?=$ar['ar_text']?>
+
+					<? } else if($ar['ar_type'] == 'textarea') { ?>
+
+						<textarea name="av_value[<?=$i?>]" <?=$style?>><?php echo $ch[$key] ?></textarea>
+
+					<? } else if($ar['ar_type'] == 'select') { 
+						 $option = explode("||", $ar['ar_text']);
 					?>
 						<select name="av_value[<?=$i?>]" <?=$style?>>
 						<? for($j=0; $j < count($option); $j++) { ?>
@@ -384,8 +453,9 @@ if($w == "") {
 	<? } ?>
 		</tbody>
 	</table>
-<? } ?>
-	
+
+
+
 	<hr class="padding" />
 	<div class="txt-center">
 		<button type="submit" class="ui-btn point">

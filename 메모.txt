@@ -1,0 +1,6 @@
+/data/dbconfig.php -> 테이블 이름정보
+
+/install/gnuboard5.sql -> 테이블 생성 정보
+
+common.php -> 전체 sql 전역변수 정보
+
