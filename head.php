@@ -29,14 +29,14 @@ if($logo_data)	$logo_data.= " />";
 
 <!-- 헤더 영역 -->
 <header id="header">
-	<div class="fix-layout">
+	<!-- <div class="fix-layout">  -->
 		<!-- 로고 영역 : PC 로고 / 모바일 로고 동시 출력 - 디자인 사용을 체크하지 않을 시, 제대로 출력되지 않을 수 있습니다. -->
 		<!-- 관리자 기능을 사용하지 않고 로고를 넣고 싶을 시, < ? = $ log_data ? > 항목을 제거 하고 <img> 태그를 넣으세요. -->
-		<h1 id="logo">
+		<!-- <h1 id="logo">
 			<a href="<?=G5_URL?>/main.php">
 				<?=$logo_data?>
 			</a>
-		</h1>
+		</h1> -->
 
 		<!-- 모바일 모드에서 메뉴를 열고 닫기 할 수 있는 버튼 -->
 		<a href="#gnb" id="gnb_control_box">
@@ -51,7 +51,7 @@ if($logo_data)	$logo_data.= " />";
 		<!-- 모바일 메뉴 열고 닫기 버튼 종료 -->
 
 
-		<div id="gnb">
+		<!-- <div id="gnb">
 			<?
 			$menu_content = get_site_content('site_menu');
 			if($menu_content) { 
@@ -94,8 +94,8 @@ if($logo_data)	$logo_data.= " />";
 				<? include(G5_PATH."/templete/txt.bgm.php"); ?>
 
 			<?php } ?>
-		</div>
-	</div>
+		</div>  -->
+	<!-- </div> -->
 </header>
 <!-- // 헤더 영역 -->
 

@@ -4,3 +4,4 @@
 
 common.php -> 전체 sql 전역변수 정보
 
+enter로 갈지 메인페이지로 갈지 정하는 곳 > index.php코드 수정

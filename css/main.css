@@ -67,3 +67,31 @@
 	#main_image_box,
 	#main_side_box  {width:auto; float:none; margin:0 0px 20px;}
 }
+
+/* 커스텀 css */
+#no_design_main {
+	justify-content: center;
+    display: flex;
+    height: 85%;
+}
+
+#mainLogos {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#logobox1 {
+	position: absolute;
+}
+
+#logobox2 {
+	position: absolute;
+}
+
+#logobox3 {
+	position: absolute;
+}

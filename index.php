@@ -19,15 +19,15 @@ if(!$is_member && !$config['cf_open']) {
 		} else {
 			// 사이트 오픈이 되어 있고, 로그인이 안되어 있을 경우
 			if (G5_IS_MOBILE) {
-				include_once(G5_PATH.'/enter.php');
+				include_once(G5_PATH.'/main.php'); //include_once(G5_PATH.'/enter.php');
 				exit;
 			}
-			$index_url = "./enter.php";
+			$index_url = "./main.php"; //$index_url = "./enter.php";
 		}
 		
 	}
 
-	if($index_url == "") {$index_url = "./enter.php";}
+	if($index_url == "") {$index_url = "./main.php";} //if($index_url == "") {$index_url = "./enter.php";}
 
 	include_once(G5_PATH.'/head.sub.php');
 	add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/index.css">', 0);

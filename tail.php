@@ -12,9 +12,9 @@ if(defined('G5_THEME_PATH')) {
 </section>
 
 
-<a href="#header" id="goto_top">
+<!-- <a href="#header" id="goto_top">
 	<img src="<?=G5_IMG_URL?>/btn_top.png" />
-</a>
+</a> -->
 <script>
 $('#goto_top').click(function () {
 	$('body,html').animate({

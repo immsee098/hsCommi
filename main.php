@@ -20,7 +20,19 @@ if($main_content) {
 } else { 
 ?>
 	<div id="no_design_main">
-		<div id="main_visual_box">
+		<div id="mainLogos">
+			<div id="logobox1">
+				<img src="<?=G5_IMG_URL?>/customImg/circle_small.png" />
+			</div>
+			<div id="logobox2">
+				<img src="<?=G5_IMG_URL?>/customImg/circle_big.png" />
+			</div>
+			<div id="logobox3">
+				<img src="<?=G5_IMG_URL?>/customImg/main_typo.png" />
+			</div>
+		</div>
+		<!-- <div><? include(G5_PATH."/templete/txt.outlogin.php"); ?></div> -->
+		<!-- <div id="main_visual_box">
 			<? include(G5_PATH."/templete/txt.visual.php"); ?>
 		</div>
 
@@ -44,7 +56,7 @@ if($main_content) {
 		</div>
 
 		<div id="main_copyright_box" class="theme-box txt-center">
-			COPYRIGHT &copy; 2021 by Avocado
+			COPYRIGHT &copy; 2021 by Avocado -->
 		</div>
 	</div>
 <?php } ?>

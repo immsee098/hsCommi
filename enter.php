@@ -1,4 +1,4 @@
-<?
+<!-- <?
 	include_once('./_common.php');
 	if($is_member & !$config['cf_open']) {
 		goto_url(G5_URL.'/main.php');
@@ -70,4 +70,4 @@ window.onload=function() {
 </script>
 
 </body>
-</html>
+</html> -->
