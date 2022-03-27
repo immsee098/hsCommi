@@ -57,6 +57,7 @@
 
 /****************************************************
 	반응형 스타일
+
 ****************************************************/
 
 @media all and (max-width:1024px)  {
@@ -70,9 +71,11 @@
 
 /* 커스텀 css */
 #no_design_main {
-	justify-content: center;
-    display: flex;
-    height: 85%;
+	margin: 0 auto;
+    display: block;
+    height: 45%;
+    width: 30%;
+	margin-top: 200px;
 }
 
 #mainLogos {
@@ -82,16 +85,31 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 30%;
+}
+
+#mainLogos:hover {
+	-webkit-filter: drop-shadow(0px 0px 0px rgb(255, 255, 255));
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
 
 #logobox1 {
 	position: absolute;
+	animation: rotate_image2 10s linear infinite;transform-origin: 50% 50%;
+	width: 200%;
 }
 
 #logobox2 {
 	position: absolute;
+	animation: rotate_image 10s linear infinite;transform-origin: 50% 50%;
+	width: 140%;
 }
 
 #logobox3 {
 	position: absolute;
 }
+
+@keyframes rotate_image{ 100% { transform: rotate(360deg); } }
+@keyframes rotate_image2{ 100% { transform: rotate(-360deg); } }

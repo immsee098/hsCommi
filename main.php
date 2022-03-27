@@ -31,33 +31,6 @@ if($main_content) {
 				<img src="<?=G5_IMG_URL?>/customImg/main_typo.png" />
 			</div>
 		</div>
-		<!-- <div><? include(G5_PATH."/templete/txt.outlogin.php"); ?></div> -->
-		<!-- <div id="main_visual_box">
-			<? include(G5_PATH."/templete/txt.visual.php"); ?>
-		</div>
-
-		<div id="main_twitter_box" class="theme-box">
-			<? include(G5_PATH."/templete/txt.twitter.php"); ?>
-		</div>
-
-		<div id="main_image_box" class="theme-box">
-			<img src="<?=G5_IMG_URL?>/temp_main_image.png" alt="임시 메인 이미지" />
-		</div>
-
-		<div id="main_side_box">
-			<div id="main_login_box" class="theme-box">
-				<? include(G5_PATH."/templete/txt.outlogin.php"); ?>
-			</div>
-			<div id="main_banner_box" class="theme-box">
-				<img src="<?=G5_URL?>/adm/img/logo.png" alt="임시 메인 배너이미지" />
-				<p>AVOCADO EDITION</p>
-				<p><a href="https://avocado-edition-rout.postype.com/" target="_blank">https://avocado-edition-rout.postype.com/</a></p>
-			</div>
-		</div>
-
-		<div id="main_copyright_box" class="theme-box txt-center">
-			COPYRIGHT &copy; 2021 by Avocado -->
-		</div>
 	</div>
 <?php } ?>
 </div>

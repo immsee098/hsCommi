@@ -8,6 +8,7 @@ if(defined('G5_THEME_PATH')) {
 
 
 ?>
+
 	</div>
 </section>
 
@@ -24,6 +25,7 @@ $('#goto_top').click(function () {
 });
 </script>
 
+<? include(G5_PATH."/templete/txt.bgm.php"); ?>
 
 <script src="<?php echo G5_JS_URL ?>/swiper.js"></script>
 <script src="<?php echo G5_JS_URL ?>/_custom.js"></script>

@@ -213,7 +213,58 @@ html.single .bgm-player {display:none !important;}
 ********************************************/
 
 /** 디자인 설정 안할 시 */
-#no_design_gnb {padding:20px 0; text-align:center; line-height:1.5em;}
+
+/* 헤더 이름 폰트 */
+@font-face {
+    font-family: 'KoPubDotumMedium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 헤더 */
+#no_design_gnb {
+	padding:20px 0; 
+	text-align:center; 
+	line-height:1.5em;
+	margin-right: 2em;
+    justify-content: flex-end;
+    display: flex;
+	width: 600px;
+}
+
+/* 메뉴 위 */
+#upper_infos {
+	display: flex;
+	justify-content: space-between;
+    width: 390px;
+}
+
+#charName {
+	font-family: KoPubDotumMedium;
+	color: #b9b9b9;
+	margin-left: 0.5em;
+}
+
+#charName span {
+	font-family: KoPubDotumMedium;
+}
+
+#charName a {
+	font-family: KoPubDotumMedium;
+}
+
+#moneyAmount {
+	font-family: KoPubDotumMedium;
+	color: #cecece;
+	font-size: 12px;
+}
+
+#moneyName {
+	font-family: KoPubDotumMedium;
+	color: #707070;
+}
+
 #no_design_gnb li {display:block; margin-bottom:20px;}
 
 .close-header #header {width:0px !important;}
@@ -238,7 +289,16 @@ html.single .bgm-player {display:none !important;}
 	#header {position:fixed; top:0; left:0; right:0; bottom:auto; z-index:999; width:auto; height:50px; overflow:visible;}
 
 	/* 메인메뉴 */
-	#gnb {position:fixed; top:0; right:-280px; bottom:0; width:280px; z-index:999; overflow-y:auto;}
+	#gnb {
+		position:fixed; 
+		top:0; 
+		right:-280px; 
+		bottom:0; 
+		width:280px; 
+		z-index:999; 
+		overflow-y:auto;
+	}
+
 	#gnb_control_box {position:absolute; top:50%; margin-top:-20px; right:10px; width:40px; height:40px; border-radius:100%; text-align:center;}
 	#gnb_control_box:before {content:""; display:inline-block; width:0; height:100%; vertical-align:middle;}
 	#gnb_control_box img {display:inline-block; max-width:50%; max-height:50%; vertical-align:middle; margin-left:-12%; opacity:1;}
@@ -252,6 +312,12 @@ html.single .bgm-player {display:none !important;}
 	.open-gnb #gnb_control_box {position:fixed; top:0; left:0; right:0; bottom:0; z-index:99; background:rgba(0, 0, 0, 0.5); border-radius:0; width:auto; height:auto;}
 	.open-gnb #gnb_control_box img {opacity:0;}
 }
+
+/* 위에 탭 열렸을 때 */
+	#tab_selectBar {
+		display: flex;
+		justify-content: flex-end;
+	}
 
 
 /**************************************************************
