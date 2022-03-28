@@ -104,33 +104,38 @@ if($logo_data)	$logo_data.= " />";
 						<img src="<?=G5_IMG_URL?>/customImg/left_arrow.png">
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/member">
-							멤버목록
+						<a href="<?=G5_URL?>/">
+							<img src="<?=G5_IMG_URL?>/customImg/main.png">
 						</a>
 					</li>
 					<li>
 						<a href="<?=G5_URL?>/member/ready.php">
-							신청자목록
+							<img src="<?=G5_IMG_URL?>/customImg/world.png">
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/couple">
-							커플목록
+						<a href="<?=G5_URL?>/member/ready.php">
+							<img src="<?=G5_IMG_URL?>/customImg/map.png">
+						</a>
+					</li>
+					<li>
+						<a href="<?=G5_URL?>/member">
+							<img src="<?=G5_IMG_URL?>/customImg/profile.png">
+						</a>
+					</li>
+					<li>
+						<a href="<?=G5_URL?>/member/ready.php">
+							<img src="<?=G5_IMG_URL?>/customImg/board1.png">
+						</a>
+					</li>
+					<li>
+						<a href="<?=G5_URL?>/member/ready.php">
+							<img src="<?=G5_IMG_URL?>/customImg/board2.png">
 						</a>
 					</li>
 					<li>
 						<a href="<?=G5_URL?>/shop">
-							상점
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_URL?>/mypage">
-							마이페이지
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_BBS_URL?>/current_connect.php">
-							현재접속자
+							<img src="<?=G5_IMG_URL?>/customImg/shop.png">
 						</a>
 					</li>
 					<li>
