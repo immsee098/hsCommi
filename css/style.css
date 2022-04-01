@@ -14,7 +14,9 @@
 **********************************/
 
 html,
-body {height:100%;}
+body {
+	height:100%;
+}
 
 body  {line-height:1.5em; font-size:12px;}
 caption {display:none;}
