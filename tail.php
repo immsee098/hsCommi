@@ -12,7 +12,6 @@ if(defined('G5_THEME_PATH')) {
 	</div>
 </section>
 
-
 <!-- <a href="#header" id="goto_top">
 	<img src="<?=G5_IMG_URL?>/btn_top.png" />
 </a> -->
@@ -24,8 +23,6 @@ $('#goto_top').click(function () {
 	return false;
 });
 </script>
-
-<? include(G5_PATH."/templete/txt.bgm.php"); ?>
 
 <script src="<?php echo G5_JS_URL ?>/swiper.js"></script>
 <script src="<?php echo G5_JS_URL ?>/_custom.js"></script>

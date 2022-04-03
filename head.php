@@ -50,6 +50,7 @@ if($logo_data)	$logo_data.= " />";
 		</script>
 		<!-- 모바일 메뉴 열고 닫기 버튼 종료 -->
 
+		<div style="color: white; left: 30px; position: fixed;"><? include(G5_PATH."/templete/txt.bgm.php"); ?></div>
 
 		<div id="gnb" style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 20px;">
 			<?
