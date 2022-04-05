@@ -74,8 +74,8 @@
 	margin: 0 auto;
     display: block;
     height: 45%;
-    width: 30%;
-	margin-top: 200px;
+    width: 35%;
+	margin-top: 250px;
 }
 
 #mainLogos {
@@ -85,7 +85,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* margin-top: 30%; */
+	margin-top: 20%;
 }
 
 #mainLogos:hover {
@@ -97,13 +97,13 @@
 
 #logobox1 {
 	position: absolute;
-	animation: rotate_image2 10s linear infinite;transform-origin: 50% 50%;
+	animation: rotate_image2 12s linear infinite;transform-origin: 50% 50%;
 	width: 200%;
 }
 
 #logobox2 {
 	position: absolute;
-	animation: rotate_image 10s linear infinite;transform-origin: 50% 50%;
+	animation: rotate_image 12s linear infinite;transform-origin: 50% 50%;
 	width: 140%;
 }
 

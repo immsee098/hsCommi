@@ -6,9 +6,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">',
 ?>
 
     <div id="sidebox">
-        <a href="#gibon"><img src="<?=G5_IMG_URL?>/customImg/notice/1_notice.png" /></a>
-        <a href="#running"><img src="<?=G5_IMG_URL?>/customImg/notice/2_world.png" /></a>
-        <a href="#charamake"><img src="<?=G5_IMG_URL?>/customImg/notice/3_system.png" /></a>
+        <a href="<?=G5_URL?>/bbs/content.php?co_id=notice"><img src="<?=G5_IMG_URL?>/customImg/notice/1_notice.png" /></a>
+        <a href="<?=G5_URL?>/bbs/content.php?co_id=world"><img src="<?=G5_IMG_URL?>/customImg/notice/2_world.png" /></a>
+        <a href="#"><img src="<?=G5_IMG_URL?>/customImg/notice/3_system.png" /></a>
     </div>
 
 <article id="ctt" class="ctt_<?php echo $co_id; ?>">
@@ -23,9 +23,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">',
             <div id="topbox">
                 <img src="<?=G5_IMG_URL?>/customImg/notice/up.png" />
                 <div id="noticeMenu">
-                    <a href="#gibon"><img src="<?=G5_IMG_URL?>/customImg/notice/gibon.png" /></a>
-                    <a href="#running"><img src="<?=G5_IMG_URL?>/customImg/notice/running.png" /></a>
-                    <a href="#charamake"><img src="<?=G5_IMG_URL?>/customImg/notice/charma.png" /></a>
+                    <a href="#gibon" id="tag1"><img src="<?=G5_IMG_URL?>/customImg/notice/gibon.png" /></a>
+                    <a href="#running" id="tag2"><img src="<?=G5_IMG_URL?>/customImg/notice/running.png" /></a>
+                    <a href="#charamake" id="tag3"><img src="<?=G5_IMG_URL?>/customImg/notice/charma.png" /></a>
                 </div>
             </div>
 

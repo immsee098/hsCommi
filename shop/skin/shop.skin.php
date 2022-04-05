@@ -4,7 +4,39 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/shop.css">', 0);
 ?>
 
 <div id="shop_page">
-	<div id="shop_npc">
+
+	<div id="shop_left">
+		<div id="item_list_box">
+			<div id="shop_item_list">
+				<ul>
+			<? for($i = 0; $i < count($shop_list); $i++) { 
+				$shop = $shop_list[$i];
+			?>
+					<li>
+						<a href="javascript:view_shop_item('<?=$shop['sh_id']?>');">
+							<img src="<?=$shop['item']['it_img']?>" />
+							<span><?=$shop['item']['it_name']?></span>
+						</a>
+					</li>
+			<? } ?>
+				</ul>
+
+				<div id="shop_paging" class="ajax-link">
+					<?=$write_pages?>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div id="default_talk"></div>
+		</div>
+
+	</div>
+	<div id="shop_right">
+		<div><img src="<?=G5_IMG_URL?>/customImg/shop/header.png" /></div>
+		<div><img src="<?=G5_IMG_URL?>/shop/npc.png" /></div>
+	</div>
+	<!-- <div id="shop_npc">
 		<img src="<?=G5_IMG_URL?>/shop/npc.png" />
 	</div>
 
@@ -13,15 +45,6 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/shop.css">', 0);
 	</div>
 
 	<div id="item_list_box">
-		<div id="shop_cate" class="ajax-link">
-			<ul>
-			<? for($i = 0; $i < count($shop_cate); $i++) { ?>
-				<li>
-					<a href="?cate=<?=$shop_cate[$i]?>" class='ui-btn <?=$cate == $shop_cate[$i] ? 'point' : ''?>'><?=$shop_cate[$i]?></a>
-				</li>
-			<? } ?>
-			</ul>
-		</div>
 
 		<div id="shop_item_list">
 			<ul>
@@ -41,7 +64,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/shop.css">', 0);
 				<?=$write_pages?>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 </div>
 

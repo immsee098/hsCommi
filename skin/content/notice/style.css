@@ -44,5 +44,17 @@
 
 #sidebox a {
     width: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#tag1:hover {
+    box-shadow: 0px 15px 10px -15px #a47c0b inset;
+}
+
+#tag2:hover {
+    box-shadow: 0px 15px 10px -15px #a47c0b inset;
+}
+
+#tag3:hover {
+    box-shadow: 0px 15px 10px -15px #a47c0b inset;
 }

@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* 내용관리 */
+#ctt {margin:10px 0;padding:20px;}
+.ctt_admin {text-align:right}
+#ctt header h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#ctt_con {padding:10px 0;line-height:1.6em}
+#ctt_con img{max-width:100%;height:auto}
+.ctt_img {text-align:center}
+
+#noticeMenu {
+    margin-bottom: 70px;
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#noticeMenu a {
+    margin-right: 20px;
+}
+
+
+#sidebox{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    margin-left: -200px;
+    margin-top: 200px;
+}
+
+#sidebox a {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+
+#bottomImg {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}

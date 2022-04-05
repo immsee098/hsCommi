@@ -110,12 +110,12 @@ if($logo_data)	$logo_data.= " />";
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/bbs/content.php?co_id=notice">
+						<a href="<?=G5_URL?>/bbs/content.php?co_id=notimain">
 							<img src="<?=G5_IMG_URL?>/customImg/world.png">
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/member/ready.php">
+						<a href="<?=G5_URL?>/">
 							<img src="<?=G5_IMG_URL?>/customImg/map.png">
 						</a>
 					</li>
@@ -125,12 +125,12 @@ if($logo_data)	$logo_data.= " />";
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/member/ready.php">
+						<a href="<?=G5_URL?>/">
 							<img src="<?=G5_IMG_URL?>/customImg/board1.png">
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/member/ready.php">
+						<a href="<?=G5_URL?>/">
 							<img src="<?=G5_IMG_URL?>/customImg/board2.png">
 						</a>
 					</li>
