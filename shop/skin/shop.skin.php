@@ -6,28 +6,30 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/shop.css">', 0);
 <div id="shop_page">
 
 	<div id="shop_left">
-		<div id="item_list_box">
-			<div id="shop_item_list">
-				<ul>
-			<? for($i = 0; $i < count($shop_list); $i++) { 
-				$shop = $shop_list[$i];
-			?>
-					<li>
-						<a href="javascript:view_shop_item('<?=$shop['sh_id']?>');">
-							<img src="<?=$shop['item']['it_img']?>" />
-							<span><?=$shop['item']['it_name']?></span>
-						</a>
-					</li>
-			<? } ?>
-				</ul>
+		<div id="left_main">
+			<div id="item_list_box">
+				<div id="shop_item_list">
+					<ul>
+				<? for($i = 0; $i < count($shop_list); $i++) { 
+					$shop = $shop_list[$i];
+				?>
+						<li style="margin-bottom:5px;">
+							<a href="javascript:view_shop_item('<?=$shop['sh_id']?>');">
+								<img src="<?=$shop['item']['it_img']?>" />
+							</a>
+						</li>
+				<? } ?>
+					</ul>
 
-				<div id="shop_paging" class="ajax-link">
-					<?=$write_pages?>
+					<div id="shop_paging" class="ajax-link">
+						<?=$write_pages?>
+					</div>
 				</div>
 			</div>
 		</div>
+		
 
-		<div>
+		<div id="item_info">
 			<div id="default_talk"></div>
 		</div>
 

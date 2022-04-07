@@ -10,19 +10,20 @@ if($item['sh_id']) {
 	<div id="item_talk">
 		<div id="item_simple_viewer">
 			<div id="buy_item_data">
-				<div>
-					<span class="item-name"><?=$item['it_name']?> / <?=$money?> / </span>
-					<span class="item-content"><?=$item['it_content']?></span>
+				<div class="item-thumb">
+					<!-- <img src="<?=$item['it_img']?>" /> -->
 				</div>
+				<div class="item-name"><?=$item['it_name']?> <sup><?=$money?></sup></div>
+				<div class="item-content"><?=$item['it_content']?></div>
 			</div>
 		</div>
-		<!-- <div class="item_talk"><?=$item['sh_content']?></div> -->
+		<div class="item_talk"><?=$item['sh_content']?></div>
 		<br />
 	</div>
 
 	<? if($character['ch_id'] && $character['ch_state'] == '승인') { ?>
 		<a href="javascript:fn_buy_item('<?=$item['sh_id']?>');" id="btn_buy" class="ui-btn full point">
-			구매
+			구매하기
 		</a>
 	<? } ?>
 </div>

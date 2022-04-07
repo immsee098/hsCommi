@@ -20,7 +20,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">',
 
     <div id="ctt_con">
         <?php echo $str; ?>
-        <img src="<?=G5_IMG_URL?>/customImg/world/world1.png" style="display: flex;padding-left: 70px;"/>
+        <img src="<?=G5_IMG_URL?>/customImg/world/world1.png" style="display: flex;"/>
         <a href="<?=G5_URL?>/bbs/content.php?co_id=world2" id="bottomImg"><img src="<?=G5_IMG_URL?>/customImg/world/world2.png" /></a>
 
     </div>
