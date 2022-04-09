@@ -9,12 +9,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">'
 
 	<fieldset class="box-id">
 		<!-- 아이디 입력 -->
-		<input type="text" name="mb_id" required class="required" maxlength="20">
+		<img src="<?=G5_IMG_URL?>/customImg/login/id.png"><input type="text" name="mb_id" required class="required" maxlength="20">
 	</fieldset>
 
 	<fieldset class="box-pw">
 		<!-- 비밀번호 입력 -->
-		<input type="password" name="mb_password" required class="required" maxlength="20">
+		<img src="<?=G5_IMG_URL?>/customImg/login/pw.png"><input type="password" name="mb_password" required class="required" maxlength="20">
 	</fieldset>
 
 	<fieldset class="box-btn">

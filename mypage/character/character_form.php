@@ -179,13 +179,13 @@ if($w == "") {
 		</tr>
 
 		<!-- 타 러너 선택(pair) -->
-		<tr>
+		<!-- <tr>
 			<select>
 			<?for($a = 0; $row = sql_fetch_array($pairArr); $a++) { 
 				echo '<option value="' .$row['ch_id']. '">' .$row['ch_name']. '</option>';
 			 } ?>
 			</select>
-		</tr>
+		</tr> -->
 
 <? if($config['cf_side_title']) { ?>
 		<tr>
@@ -312,7 +312,7 @@ if($w == "") {
 			<col />
 		</colgroup>
 		<tbody>
-	<? for($i=0; $i < 2; $i++) {  // $i < count($ch_ar) 본래 이거 
+	<? for($i=0; $i < count($ch_ar); $i++) {  // $i < count($ch_ar) 본래 이거 
 		$ar = $ch_ar[$i];
 		$key = $ar['ar_code'];
 
@@ -382,75 +382,6 @@ if($w == "") {
 	<? } ?>
 <? } ?>
 
-
-<? for($i=1; $i < 3; $i++) {  // $i < count($ch_ar) 본래 이거 
-		$ar = $ch_ar[$i];
-		$key = $ar['ar_code'];
-
-		$style = "";
-		if($ar['ar_size']) {
-			if($ar['ar_type'] != 'textarea') 
-				$style = "style = 'width: {$ar['ar_size']}px;'";
-			else
-				$style = "style = 'width: 100%; height: {$ar['ar_size']}px;'";
-		} else {
-			$style = "style = 'width: 100%;'";
-		}
-	?>
-			<tr>
-				<th>
-					<input type="hidden" name="ar_code[<?=$i?>]" value="<?=$ar['ar_code']?>" />
-					<input type="hidden" name="ar_theme[<?=$i?>]" value="<?=$config['cf_theme']?>" />
-					<?=$ar['ar_name']?>
-				</th>
-				<?
-					if($ar['ar_type'] == 'file' || $ar['ar_type'] == 'url') { 
-						// 이미지 타입의 파일
-				?>
-
-					<td>
-						<?php echo help($ar['ar_help']) ?>
-					<? if($ar['ar_type'] == 'url') { ?>
-						<input type="text" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" <?=$style?> />
-					<? } else { 
-						// 직접 업로드
-					?>
-						<input type="file" name="av_value_file[<?=$i?>]" />
-						<input type="hidden" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" />
-					<? } ?>
-					<? if($ch[$key]) { ?>
-						<a href="<?=$ch[$key]?>" class="ui-btn" target="_blank">
-							<?=$ar['ar_name']?> 확인
-						</a>
-					<? } ?>
-					</td>
-
-				<? } else { ?>
-					<td>
-						<?php echo help($ar['ar_help']) ?>
-					<?
-						if($ar['ar_type'] == 'text') { 
-					?>
-						<input type="text" name="av_value[<?=$i?>]" value="<?php echo $ch[$key] ?>" <?=$style?> /> <?=$ar['ar_text']?>
-
-					<? } else if($ar['ar_type'] == 'textarea') { ?>
-
-						<textarea name="av_value[<?=$i?>]" <?=$style?>><?php echo $ch[$key] ?></textarea>
-
-					<? } else if($ar['ar_type'] == 'select') { 
-						 $option = explode("||", $ar['ar_text']);
-					?>
-						<select name="av_value[<?=$i?>]" <?=$style?>>
-						<? for($j=0; $j < count($option); $j++) { ?>
-							<option value="<?=$option[$j]?>" <?=$option[$j] == $ch[$key] ? "selected" : ""?>><?=$option[$j]?></option>
-						<? } ?>
-						</select>
-					<? } ?>
-
-					</td>
-				<? } ?>
-			</tr>
-	<? } ?>
 		</tbody>
 	</table>
 

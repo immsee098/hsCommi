@@ -14,12 +14,69 @@
 
 html,
 body {height:100%;}
-.loginWrap {display:table; width:100%; height:100%;}
-.login-inner {display:table-cell; vertical-align:middle; text-align:center;}
+.loginWrap {display:table; width:100%; height:100%; position: relative; overflow: hidden;}
+.login-inner {display:table-cell; vertical-align:middle; text-align:center; position: relative;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .login-logo {margin-top:-50px;}
-.login-form-box {position:relative; box-sizing:border-box; max-width:280px; margin:0 auto; padding:5px;}
-.login-form-box .inner {display:block; position:relative; padding-right:80px;}
-.login-form-box button {display:block; position:absolute; right:0; top:0; width:75px; bottom:0; height:100%;}
-.login-form-box fieldset + fieldset {margin-top:5px;}
-.login-form-box input {width:100%;}
+.login-form-box {position:absolute; box-sizing:border-box; max-width:280px; margin:0 auto; padding:5px; margin-top: 8%;} 
+.login-form-box .inner {display:block; position:relative; padding-right:80px; z-index: 1000;}
+.login-form-box button {
+	display:block; 
+	right:0; top:0; width:75px; bottom:0; height:100%;}
+.login-form-box fieldset {
+	margin-top:5px;
+	display: flex;
+	justify-content: space-between;
+    width: 280px;
+}
+.login-form-box input {
+	width:100%;
+	border:none;border-right:0px; border-top:0px; border-left:0px; border-bottom:0px;
+}
+
+.login-form-box img {
+	margin-right: 10px;
+	position: relative;
+}
+
+.btnlogin {
+	background-color: transparent;
+    border: none;
+}
+
+#bottomBox {
+	display: flex;
+    margin-top: 15px;
+	justify-content: space-between;
+    width: 300px;
+}
+
+#smallbox {
+	position: absolute;
+	animation: rotate_image 12s linear infinite;transform-origin: 50% 50%;
+}
+
+#logoImg {
+	position: absolute;
+	margin-bottom: 5%;
+}
+
+@keyframes rotate_image{ 100% { transform: rotate(360deg); } }
+@keyframes rotate_image2{ 100% { transform: rotate(-360deg); } }
+
+
+#bottom_box {
+	position: absolute;
+    padding-top: 700px;
+	width: 50%;
+    top: 81%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
