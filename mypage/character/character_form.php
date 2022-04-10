@@ -52,7 +52,6 @@ $pairArr = sql_query("select * from avo_character", false);
 $pairResult = sql_fetch_array($pairArr);
 
 //그리고 한 번 호출된 것 위에서 console.log하면 아래에서 안먿는듯... 여기서 주석 풀면 아래 select에 값 안들감;
-//Console_log($pairArr);
 // Console_log($pairResult);
 
 //array 안에 담아도 꼭.. for 돌려줘야 하는 듯

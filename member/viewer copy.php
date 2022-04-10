@@ -19,13 +19,6 @@ for($i = 0; $row = sql_fetch_array($ar_result); $i++) {
 	$ch_ar[$i] = $row;
 }
 
-
-function Console_log($data){
-	echo '<script>';
-	echo 'console.dir('. json_encode( $data ) .')';
-	echo '</script>';
-}
-
 /* --------------------------------------------------------------
 	프로필 양식에서 추가한 캐릭터의 데이터를 임의로 뿌리고 싶을 때
 	$ch['고유코드'] 로 해당 데이터를 가져올 수 있습니다.
@@ -47,7 +40,6 @@ function Console_log($data){
 $av_result = sql_query("select * from {$g5['value_table']} where ch_id = '{$ch['ch_id']}'");
 for($i = 0; $row = sql_fetch_array($av_result); $i++) {
 	$ch[$row['ar_code']] = $row['av_value'];
-	Console_log($row);
 }
 
 // ------- 캐릭터 스탯 정보 가져오기
@@ -85,11 +77,6 @@ if($article['ad_use_closet'] && $article['ad_use_body']) {
 		$ch['ch_body'] = $temp_cl['cl_path'];
 	}
 }
-
-Console_log($status);
-Console_log($relation);
-Console_log($ch_ar);
-
 
 $g5['title'] = $ch['ch_name']." 프로필";
 include_once(G5_PATH.'/head.php');
