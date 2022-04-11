@@ -44,12 +44,42 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 
 		</div>
 		<div id="etc">
-
+			<? 
+				$ar = $ch_ar[11];
+				$key = $ar['ar_code'];
+			?>
+			<p>
+				<?
+					echo nl2br($ch[$key]);
+				?>	
+			</p>
 		</div>
 		<div id="per">
+			<? 
+				$ar = $ch_ar[10];
+				$key = $ar['ar_code'];
+			?>
+			<p>
+				<?
+					echo nl2br($ch[$key]);
+				?>	
+			</p>
 		</div>
 		<div id="keyword">
-
+			<span id="key1"> >
+				<? 
+					$ar = $ch_ar[8];
+					$key = $ar['ar_code'];
+					echo $ch[$key];
+				?>
+			</span>
+			<span id="key2">>
+				<? 
+					$ar = $ch_ar[9];
+					$key = $ar['ar_code'];
+					echo $ch[$key];
+				?>
+			</span>
 		</div>
 		<div id="say">
 
@@ -61,14 +91,20 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 	</div>
 	
 	<div id="box_middle">
-	</div>
-
-	<div id="box_right">
+		<div id="box_right">
+		</div>
 	</div>
 
 	<hr class="padding" />
 	<hr class="padding" />
 
 </div>
+
+<script>
+	$(document).ready(function() {
+		$("#per").show();
+		$("#etc").hide();
+	});
+</script>
 
 
