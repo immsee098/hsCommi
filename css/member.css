@@ -185,6 +185,40 @@
 }
 
 
+#per, #etc {
+	width: 95%;
+	height: 320px;
+	overflow: scroll;
+	border-radius: 3px;
+	background: rgb(143,143,143);
+	background: linear-gradient(360deg, rgba(143,143,143,0.4) 0%, rgba(23,23,23,0) 94%);
+	margin-top: 20px;
+	-ms-overflow-style: none;
+}
+
+#per::-webkit-scrollbar{ display:none; }
+#etc::-webkit-scrollbar{ display:none; }
+
+#keyword {
+	width: 95%;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+#say {
+	margin-top: 20px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-radius: 4px;
+    background: #713939;
+    font-size: 15px;
+    padding: 3px;
+    word-break: break-word;
+}
+
 /*  */
 
 #box_middle {

@@ -66,14 +66,15 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 			</p>
 		</div>
 		<div id="keyword">
-			<span id="key1"> >
+			<span id="key1"> 
 				<? 
 					$ar = $ch_ar[8];
 					$key = $ar['ar_code'];
 					echo $ch[$key];
 				?>
 			</span>
-			<span id="key2">>
+			<span> | </span>
+			<span id="key2">
 				<? 
 					$ar = $ch_ar[9];
 					$key = $ar['ar_code'];
@@ -82,7 +83,11 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 			</span>
 		</div>
 		<div id="say">
-
+			<? 
+				$ar = $ch_ar[6];
+				$key = $ar['ar_code'];
+				echo $ch[$key];
+			?>
 		</div>
 		<div id="nameHouse">
 
@@ -104,6 +109,16 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 	$(document).ready(function() {
 		$("#per").show();
 		$("#etc").hide();
+
+		$("#key1").click(function (e) {
+			$("#per").show();
+			$("#etc").hide();
+		});
+
+		$("#key2").click(function (e) {
+			$("#per").hide();
+			$("#etc").show();
+		});
 	});
 </script>
 
