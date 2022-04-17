@@ -69,8 +69,18 @@
 ****************************************************/
 
 #character_profile .visual-area {position:relative;}
-#character_profile #character_body {position:relative; z-index:0;}
-#character_profile #character_body img {display:block; margin:0 auto;}
+#character_profile #character_body {
+	position:relative; 
+	z-index:0;
+	margin-left: 60px;
+}
+#character_profile #character_body img {
+	display:block; 
+	max-width: 1150px;
+	/* margin:0 auto; */
+}
+
+
 #character_profile #character_head {position:absolute; left:0; bottom:0; right:0; z-index:1;}
 
 
@@ -213,11 +223,77 @@
     align-items: center;
     height: 60px;
     border-radius: 4px;
-    background: #713939;
     font-size: 15px;
     padding: 3px;
     word-break: break-word;
 }
+
+#houseAndName {
+	display: flex;
+	width: 95%;
+	margin-top: 10px;
+}
+
+#nameHouse {
+	display: flex;
+    margin-right: 14px;
+    align-items: center;
+}
+
+#charName {
+	display: flex;
+	flex-direction: column;
+}
+
+#krName {
+	padding-top: 26px;
+    font-size: 45px;
+}
+
+#enName {
+	padding-top: 30px;
+    font-size: 20px;
+    word-break: break-word;
+}
+
+#otherEtc {
+	margin-top: 18px;
+    height: 25px;
+    width: 95%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 69%, rgba(255,255,255,0) 100%);
+	border-radius: 1px;
+	display: flex;
+	align-items: center;
+}
+
+#myBgm {
+	display: flex;
+	margin-left: 50px;
+    margin-right: 80px;
+}
+
+#myBgm div {
+	margin-right: 15px;
+}
+
+#otherEtc div {
+	color: gray;
+}
+
+#sinsang {
+	display: flex;
+}
+
+#sinsang div {
+	margin-right: 24px;
+	font-size: 15px;
+}
+
+#char_bgm_box {
+	width: 0px; height: 0px; overflow: hidden;
+}
+
 
 /*  */
 
@@ -225,14 +301,77 @@
 	position: relative;
 	width: 67%;
 	height: 100%;
-	background-color: yellow;
+	overflow: scroll;
+	-ms-overflow-style: none;
 }
+
+#box_middle::-webkit-scrollbar{ display:none; }
 
 #box_right {
 	position: absolute;
     width: 43%;
-    height: 60%;
+    height: 100%;
     bottom: 0;
     right: 0;
     background-color: gray;
 }
+
+#banAndWand {
+	margin-top: 35px;
+    width: 98%;
+    height: 83%;
+    display: flex;
+}
+
+#wanAndBtn {
+	width:20%;
+	height: 100%;
+}
+
+#ban {
+	width:80%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#banImg {
+	text-align: right;
+}
+
+#ban img {
+	max-width: 100%;
+}
+
+
+#menHel {
+	margin-left: 10px;
+	width: 98%;
+	height: 6%;
+}
+
+#menHel div {
+	width: 98%;
+    display: flex;
+}
+
+.ic {
+	width: 6%;
+}
+
+.nn {
+	margin-left: 3px;
+    text-align: left;
+	width: 14%;
+}
+
+.pp {
+	width: 77%;
+}
+
+#prgs1 { appearance: none; width: 100%; } 
+#prgs1::-webkit-progress-bar { background:#f0f0f0; border-radius:1px; box-shadow: inset 3px 3px 10px #ccc; } 
+#prgs1::-webkit-progress-value { border-radius:1px; background: #cd4141; background: -webkit-linear-gradient(to right, #cd4141, #cd4141); background: linear-gradient(to right, #cd4141, #cd4141); }
+
+#prgs2 { appearance: none; width: 100%;  } 
+#prgs2::-webkit-progress-bar { background:#f0f0f0; border-radius:1px; box-shadow: inset 3px 3px 10px #ccc; } 
+#prgs2::-webkit-progress-value { border-radius:1px; background: #2343e0; background: -webkit-linear-gradient(to right, #2343e0, #2343e0); background: linear-gradient(to right, #2343e0, #2343e0); }

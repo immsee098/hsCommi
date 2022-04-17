@@ -25,7 +25,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 	<div class="visual-area">
 		<? if($article['ad_use_body'] && $ch['ch_body']) { ?>
 			<div id="character_body">
-				<img src="<?=$ch['ch_body']?>" alt="캐릭터 전신" />
+				<img src="<?=$ch['ch_body']?>" alt="캐릭터 전신" id="jun" />
 			</div>
 		<? } ?>
 		<? if($article['ad_use_head'] && $ch['ch_head']) { ?>

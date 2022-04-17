@@ -25,19 +25,21 @@ var set_equalizer = function () {
 
 $(document).ready(function(e) {
 	bgm_effect = setInterval(set_equalizer, 300);
-	console.log("start");
-
-	$("#bgm-bt").on("click", function() {
-		if($("#bgm-bt").html()=='STOP'){
-			$("#bgm-bt").html("START");
-			clearInterval(bgm_effect);
-			console.log("stop");
-		} else {
-			$("#bgm-bt").html("STOP");
-			bgm_effect = setInterval(set_equalizer, 300);
-			console.log("start");
-		}		
+	$("#startBtn").on("click",function(){
+		console.log("aaa")
 	})
+
+	// $("#bgm-bt").on("click", function() {
+	// 	if($("#bgm-bt").html()=='STOP'){
+	// 		$("#bgm-bt").html("START");
+	// 		clearInterval(bgm_effect);
+	// 		console.log("stop");
+	// 	} else {
+	// 		$("#bgm-bt").html("STOP");
+	// 		bgm_effect = setInterval(set_equalizer, 300);
+	// 		console.log("start");
+	// 	}		
+	// })
 
 })
 
@@ -47,8 +49,8 @@ bgm_effect = setInterval(set_equalizer, 300);
 
 <? if($config['cf_bgm']) { ?>
 <nav class="bgm-player">
-<span class="bgm-bt"><a href="<?=G5_URL?>/bgm.php?action=play" target="bgm_frame" class="play bgm-co" onclick="return fn_control_bgm('play')" style="color: #878787">▶</a></span>
-<span class="bgm-bt"><a href="<?=G5_URL?>/bgm.php" target="bgm_frame" class="stop bgm-co" onclick="return fn_control_bgm('stop')" style="color: #878787; margin-left:10px">■</a></span>
+<span class="bgm-bt"><a id="startBtn" href="<?=G5_URL?>/bgm.php?action=play" target="bgm_frame" class="play bgm-co" style="color: #878787">▶</a></span>
+<span class="bgm-bt"><a id="endBtn" href="<?=G5_URL?>/bgm.php" target="bgm_frame" class="stop bgm-co" onclick="return fn_control_bgm('stop')" style="color: #878787; margin-left:10px">■</a></span>
 	<div class="bar-equalizer">
 		<?
 			// 이퀄라이저 바 개수
