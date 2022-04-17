@@ -120,12 +120,12 @@ if($logo_data)	$logo_data.= " />";
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/">
+						<a href="<?=G5_URL?>/member">
 							<img src="<?=G5_IMG_URL?>/customImg/profile.png">
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/">
+						<a href="<?=G5_URL?>/bbs/board.php?bo_table=logboard">
 							<img src="<?=G5_IMG_URL?>/customImg/board1.png">
 						</a>
 					</li>

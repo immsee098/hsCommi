@@ -140,7 +140,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 						$ar = $ch_ar[2];
 						$key = $ar['ar_code'];
 						echo $ch[$key];
-					?>
+					?>세
 				</div>
 				<div> | </div>
 				<div id="gender">
@@ -156,7 +156,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 						$ar = $ch_ar[3];
 						$key = $ar['ar_code'];
 						echo $ch[$key];
-					?>
+					?>cm
 				</div>
 				<div> | </div>
 				<div id="blood">
