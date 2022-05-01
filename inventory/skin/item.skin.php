@@ -14,7 +14,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 		<span><?=number_format($in['it_sell'])?><?=$config['cf_money_pice']?></span>
 	</p>
 	<div class="item-content-box">
-		<div class="default">
+		<div class="default" style="word-break: break-all;">
 			<?=$in['it_content']?>
 		</div>
 	<? if($in['it_content2']) { ?>

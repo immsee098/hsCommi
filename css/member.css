@@ -313,7 +313,7 @@
     height: 100%;
     bottom: 0;
     right: 0;
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 #banAndWand {
@@ -324,12 +324,38 @@
 }
 
 #wanAndBtn {
-	width:20%;
+	text-align: center;
+	width:40%;
 	height: 100%;
 }
 
+#wandReal {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#realwand {
+	height: 500px;
+    width: 100px;
+}
+
+#iconsEtc {
+	margin-top: 20px;
+	display: flex;
+    flex-direction: column;
+}
+
+#iconsEtc img {
+	width: 60px;
+	height: 60px;
+	margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+
 #ban {
-	width:80%;
+	width:70%;
 	height: 100%;
 	overflow: hidden;
 }
@@ -375,3 +401,66 @@
 #prgs2 { appearance: none; width: 100%;  } 
 #prgs2::-webkit-progress-bar { background:#f0f0f0; border-radius:1px; box-shadow: inset 3px 3px 10px #ccc; } 
 #prgs2::-webkit-progress-value { border-radius:1px; background: #2343e0; background: -webkit-linear-gradient(to right, #2343e0, #2343e0); background: linear-gradient(to right, #2343e0, #2343e0); }
+
+/* 팝업 */
+
+.modal_relation {
+	position: fixed;
+    width: 200px;
+	background-color: rgb(255 255 255 / 50%);
+	height: 100%;
+    z-index: 1000;
+    margin-top: -100px;
+	display: none;
+	overflow: scroll;
+}
+
+.modal_relation li {
+	margin: 20px;
+}
+
+.memo {
+	display: none;
+}
+
+#modal_relDetail {
+	border-radius: 20px;
+	margin-top: -90px;
+    margin-left: 220px;
+    border-radius: 20px;
+    position: fixed;
+    width: 245px;
+    height: 210px;
+    z-index: 1001;
+    background-color: rgba(47, 36, 36, 0.8);
+    word-break: break-word;
+    padding: 10px;
+    overflow: scroll;
+	display: none;
+	-ms-overflow-style: none;
+}
+
+#modal_relDetail::-webkit-scrollbar{ display:none; }
+
+#modal_inven {
+	-ms-overflow-style: none;
+	background-color: rgba(39, 39, 39, 0.6);
+	position: fixed;
+	width: 640px;
+	height: 280px;
+	z-index: 1002;
+	display: flex;
+	flex-direction: column;
+	left: 39%;
+    top: 60%;
+	border-radius: 10px;
+	display: none;
+}
+
+#invenBox {
+	overflow: scroll;
+	margin: 5px;
+	-ms-overflow-style: none;
+}
+
+#invenBox::-webkit-scrollbar{ display:none; }

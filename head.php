@@ -90,7 +90,7 @@ if($logo_data)	$logo_data.= " />";
 								</span>
 								</li>
 								<li>
-									<a href="http://iksrok.dothome.co.kr/mypage/"><img src="<?=G5_IMG_URL?>/customImg/my_page.png"></a>
+									<a href="<?=G5_BBS_URL?>/mypage/"><img src="<?=G5_IMG_URL?>/customImg/my_page.png"></a>
 								</li>
 								<li>
 									<a href="<?=G5_BBS_URL?>/logout.php"><img src="<?=G5_IMG_URL?>/customImg/log_out.png"></a>
@@ -120,12 +120,14 @@ if($logo_data)	$logo_data.= " />";
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/member">
+						<a href="<?=G5_URL?>/">
+						<!-- <a href="<?=G5_URL?>/member"> -->
 							<img src="<?=G5_IMG_URL?>/customImg/profile.png">
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/bbs/board.php?bo_table=logboard">
+						<a href="<?=G5_URL?>/">
+						<!-- <a href="<?=G5_URL?>/bbs/board.php?bo_table=logboard"> -->
 							<img src="<?=G5_IMG_URL?>/customImg/board1.png">
 						</a>
 					</li>
@@ -135,7 +137,8 @@ if($logo_data)	$logo_data.= " />";
 						</a>
 					</li>
 					<li>
-						<a href="<?=G5_URL?>/shop">
+						<a href="<?=G5_URL?>/">
+						<!-- <a href="<?=G5_URL?>/shop"> -->
 							<img src="<?=G5_IMG_URL?>/customImg/shop.png">
 						</a>
 					</li>

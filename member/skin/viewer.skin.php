@@ -172,6 +172,68 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 	</div>
 	
 	<div id="box_middle">
+	<!-- 각종 모달 -->
+	<div class="modal"> 
+		<div class="modal_relation">
+			<?
+				for($i=0; $i < count($relation); $i++) { 
+					$re_ch = get_character($relation[$i]['re_ch_id']);
+					if($relation[$i]['rm_memo'] == '') { continue; }
+			?>
+				<li>
+					<div class="ui-thumb" id="relId<?=$i?>">
+						<a href="#">
+							<img src="<?=$re_ch['ch_thumb']?>" />
+						</a>
+					</div>
+					<div class="info" style="margin-top:10">
+						<div class="rm-name">
+							<?=$re_ch['ch_name']?>
+						</div>
+						<div class="rm-like-style">
+							<p>
+								<? for($j=0; $j < 5; $j++) { 
+									$class="";
+									$style = "";
+									if($j < $relation[$i]['rm_like']) {
+										$class="txt-point";
+									} else {
+										$style="opacity: 0.2;";
+									}
+
+									echo "<i class='{$class}' style='{$style}'></i>";
+								} ?>
+							</p>
+						</div>
+					</div>
+					<input class="memo" id="memo<?=$i?>" value="<?=nl2br($relation[$i]['rm_memo'])?>"/>			
+					<ol>
+						<?
+							$relation[$i]['rm_link'] = nl2br($relation[$i]['rm_link']);
+							$link_list = explode('<br />', $relation[$i]['rm_link']);
+							for($j=0; $j < count($link_list); $j++) {
+								$r_row = $link_list[$j];
+								if(!$r_row) continue;
+						?>
+							<li>
+								<a href="<?=$r_row?>" class="btn-log" target="_blank"></a>
+							</li>
+						<? } ?>
+					</ol>
+				</li>
+			<? }?>
+		</div> 
+		<div id="modal_relDetail" class="off">
+		</div>
+
+		<div id="modal_inven" class="off">
+			<div style="text-align:right; margin:10px; font-size:20">INVENTORY</div>
+			<div id="invenBox"><? include(G5_PATH."/inventory/list.inc.php"); ?></div>
+		</div>
+	</div>
+
+	<!-- 본 컨텐츠 -->
+
 		<? if($article['ad_use_body'] && $ch['ch_body']) { ?>
 			<div id="character_body">
 				<img src="<?=$ch['ch_body']?>" alt="캐릭터 전신" />
@@ -180,6 +242,21 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 		<div id="box_right">
 			<div id="banAndWand">
 				<div id="wanAndBtn">
+					<div id="wandReal">
+						<img src="<?=G5_IMG_URL?>/customImg/house/04wand.png" />
+						<? 
+							$ar = $ch_ar[12];
+							$key = $ar['ar_code'];
+						?>
+						<img src="<?=$ch[$key]?>" id="realwand" />
+						<img src="<?=G5_IMG_URL?>/customImg/house/04wand.png" />
+					</div>
+					<div id="iconsEtc">
+						<div><img src="<?=G5_IMG_URL?>/customImg/house/04_1clothes.png" id="clothes" class="off" /></div>
+						<div><img src="<?=G5_IMG_URL?>/customImg/house/04_2inven.png" id="inven" class="off" /></div>
+						<div><img src="<?=G5_IMG_URL?>/customImg/house/04_3mix.png" id="mix" /></div>
+						<div><img src="<?=G5_IMG_URL?>/customImg/house/04_4rel.png" id="rel" class="off" /></div>		
+					</div>
 
 				</div>
 				<div id="ban"> 
@@ -231,9 +308,31 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 			$("#etc").show();
 		});
 
+		$(".ui-thumb").on("click", function(e) {
+			let aa = ($(this).attr("id"));
+			aa = aa.replace("relId", "");
+			let newId = "memo"+aa;
+			let texted = $("#"+newId+"").val();
+			let getId = $("#"+newId+"").attr("class");
+			console.log(texted)
+
+			if(getId == "on"){
+				$("#"+newId+"").removeClass("on");
+				$("#"+newId+"").addClass("off");
+				$("#modal_relDetail").css("display", "none");
+			} else {
+				$("#modal_relDetail").html(texted);
+				$("#"+newId+"").removeClass("off");
+				$("#"+newId+"").addClass("on");
+				$("#modal_relDetail").css("display", "inline-block");
+			}
+		});
+
 		changeHouse();
 		changeBoarder();
 		musicOn();
+		changeRelation();
+		showInventory();
 
 		//"bgm_frame".location="<?=G5_URL?>/bgm.php";
 		// $("#endBtn").trigger("click")
@@ -297,6 +396,53 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 		}
 		
 	}
+
+	function changeRelation() {
+		$("#rel").click(function() {
+			let status = $("#rel").attr("class");
+			if(status == "off") {
+				$(".modal_relation").css("display", "inline-block");
+				$("#rel").removeClass("off");
+				$("#rel").addClass("on");
+			} else {
+				$(".modal_relation").css("display", "none");
+				$("#rel").removeClass("on");
+				$("#rel").addClass("off");
+				$("#modal_relDetail").css("display", "none");
+				$("#modal_relDetail").html("");
+			}
+		});
+	}
+
+	function showInventory() {
+		$("#inven").click(function() {
+			let status = $("#inven").attr("class");
+			if(status == "off") {
+				$("#modal_inven").css("display", "inline-block");
+				$("#inven").removeClass("off");
+				$("#inven").addClass("on");
+			} else {
+				$("#modal_inven").css("display", "none");
+				$("#inven").removeClass("on");
+				$("#inven").addClass("off");
+			}
+		});
+	}
+
+	// function changeRelation() {
+	// 	$("#rel").click(function() {
+	// 		let status = $("#inven").attr("class");
+	// 		if(status == "off") {
+	// 			$(".modal_relation").css("display", "inline-block");
+	// 			$("#inven").removeClass("off");
+	// 			$("#inven").addClass("on");
+	// 		} else {
+	// 			$(".modal_relation").css("display", "none");
+	// 			$("#inven").removeClass("on");
+	// 			$("#inven").addClass("off");
+	// 		}
+	// 	});
+	// }
 </script>
 
 
