@@ -230,6 +230,12 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 			<div style="text-align:right; margin:10px; font-size:20">INVENTORY</div>
 			<div id="invenBox"><? include(G5_PATH."/inventory/list.inc.php"); ?></div>
 		</div>
+
+		<div id="modal_clothes">
+			<a href="<?=G5_URL?>/member/closet.php?ch_id=<?=$ch['ch_id']?>" onclick="window.open(this.href, 'big_viewer', 'width=800 height=800 menubar=no status=no toolbar=no location=no scrollbars=yes resizable=yes'); return false;" class="ui-btn ico point camera circle big">
+				
+			</a>
+		</div>
 	</div>
 
 	<!-- 본 컨텐츠 -->
