@@ -6,10 +6,21 @@ $list = array();
 $side = array();
 $ch_list = array();
 
+$grList = array();
+$slList = array();
+$rvList = array();
+$hfList = array();
+
+function Console_log($data){
+	echo '<script>';
+	echo 'console.dir('. json_encode( $data ) .')';
+	echo '</script>';
+}
+
 if($config['cf_side_title']) {
 	$side_result = sql_query("select * from {$g5['side_table']}"); 
 	for($i=0; $si = sql_fetch_array($side_result); $i++) { 
-		$list[] = get_character_list($side['si_id']);
+		$list[] = get_character_list($si['si_id']);
 		$side[] = $si;
 	}
 } 
@@ -22,6 +33,10 @@ if(!$config['cf_side_title'] || count($side) < 2) {
 	$side[] = '';
 }
 
+
+Console_log($list);
+Console_log($side);
+Console_log($ch_list);
 
 $g5['title'] = "멤버란";
 include_once(G5_PATH.'/head.php');

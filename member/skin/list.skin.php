@@ -4,43 +4,78 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 ?>
 
 <div class="memberWrap">
-	<? for($i=0; $i < count($list); $i++) {
-		$ch_list = $list[$i];
-
-		if($side['si_name']) {
-			echo "<div class='title'>{$side['si_name']}</div>";
-		}
-	?>
-	<div class="member-box">
-		<ul class="member-list">
-			<? for($k=0; $k < count($ch_list); $k++) {
+	<div id="grHouse">
+		<div class="grDiv"><img src="<?=$side[0]['si_img']?>" class="hsIcon"></div>
+		<?
+			$ch_list = $list[0];
+			for($k=0; $k < count($ch_list); $k++) {
 				$ch = $ch_list[$k];
-			?>
-				<li>
-					<div class="item theme-box">
-						<div class="ui-thumb">
-							<a href="./viewer.php?ch_id=<?=$ch['ch_id']?>">
-								<? if($ch['ch_thumb']) { ?>
-									<img src="<?=$ch['ch_thumb']?>" />
-								<? } ?>
-							</a>
-						</div>
-						<div class="ui-profile">
-							<a href="<?=G5_BBS_URL?>/memo_form.php?me_recv_mb_id=<?=$ch['mb_id']?>" class='send_memo'>
-								<strong><?=$ch['ch_name']?></strong>
-							</a>
-						</div>
-					</div>
-				</li>
-			<?
-				}
-				if($k == 0) { 
-					echo "<li class='no-data'>등록된 멤버가 없습니다.</li>";
-				}
-			?>
-		</ul>
+		?>
+			<div class="charImg grDiv">
+				<a href="./viewer.php?ch_id=<?=$ch['ch_id']?>" style="position: relative">
+					<? if($ch['ch_thumb']) { ?>
+						<div class="imgThumb"><img src="<?=$ch['ch_thumb']?>" /></div>
+						<div class="crName"><?=$ch['ch_name']?></div>
+					<? } ?>
+				</a>
+			</div>
+
+		<?}?>
 	</div>
-	<? } ?>
+	<div id="slHouse">	
+		<?
+			$ch_list = $list[1];
+			for($k=0; $k < count($ch_list); $k++) {
+				$ch = $ch_list[$k];
+		?>
+		<div class="charImg slDiv">
+			<a href="./viewer.php?ch_id=<?=$ch['ch_id']?>" style="position: relative">
+				<? if($ch['ch_thumb']) { ?>
+					<div class="imgThumb"><img src="<?=$ch['ch_thumb']?>" /></div>
+					<div class="crName"><?=$ch['ch_name']?></div>
+				<? } ?>
+			</a>
+		</div>
+		<?}?>
+		<div class="slDiv"><img src="<?=$side[1]['si_img']?>" class="hsIcon"></div>
+	</div>
+
+	<div id="rvHouse">
+		<div class="rvDiv"><img src="<?=$side[2]['si_img']?>" class="hsIcon"></div>
+			<?
+				$ch_list = $list[2];
+				for($k=0; $k < count($ch_list); $k++) {
+					$ch = $ch_list[$k];
+			?>
+			<div class="charImg rvDiv">
+				<a href="./viewer.php?ch_id=<?=$ch['ch_id']?>" style="position: relative">
+					<? if($ch['ch_thumb']) { ?>
+						<div class="imgThumb"><img src="<?=$ch['ch_thumb']?>" /></div>
+						<div class="crName"><?=$ch['ch_name']?></div>
+					<? } ?>
+				</a>
+			</div>
+
+		<?}?>
+	</div>
+
+	<div id="hfHouse">
+		<?
+			$ch_list = $list[3];
+			for($k=0; $k < count($ch_list); $k++) {
+				$ch = $ch_list[$k];
+		?>
+		<div class="charImg hfDiv">
+			<a href="./viewer.php?ch_id=<?=$ch['ch_id']?>" style="position: relative">
+				<? if($ch['ch_thumb']) { ?>
+					<div class="imgThumb"><img src="<?=$ch['ch_thumb']?>" /></div>
+					<div class="crName"><?=$ch['ch_name']?></div>
+				<? } ?>
+			</a>
+		</div>
+		<?}?>
+		<div class="hfDiv"><img src="<?=$side[3]['si_img']?>" class="hsIcon"></div>
+	</div>
 </div>
 
 <script>

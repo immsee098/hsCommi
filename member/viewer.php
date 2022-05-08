@@ -79,6 +79,7 @@ if($ch['ch_state'] == '승인') {
 }
 
 // ------- 캐릭터 의상 정보 가져오기
+
 if($article['ad_use_closet'] && $article['ad_use_body']) {
 	$temp_cl = sql_fetch("select * from {$g5['closthes_table']} where ch_id = '{$ch_id}' and cl_use = '1'");
 	if($temp_cl['cl_path']) { 
@@ -86,9 +87,19 @@ if($article['ad_use_closet'] && $article['ad_use_body']) {
 	}
 }
 
-Console_log($status);
+$cl = array();
+$cl_result = sql_query("select * from {$g5['closthes_table']} where ch_id = '{$ch_id}' order by cl_type desc, cl_id asc");
+$str_array_data = "";
+$array_data = "";
+for($i=0; $row=sql_fetch_array($cl_result); $i++) { 
+	$cl[$i] = $row;
+	$array_data .= "{$str_array_data}'{$row['cl_subject']}'";
+	$str_array_data = ",";
+}
+
+Console_log($cl);
 Console_log($relation);
-Console_log($ch_ar);
+// Console_log($ch_ar);
 
 
 $g5['title'] = $ch['ch_name']." 프로필";

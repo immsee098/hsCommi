@@ -47,12 +47,113 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GowunBatang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KoPubDotumMedium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'HeirofLightRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /****************************************************
 	멤버 목록 레이아웃
 ****************************************************/
 
-.memberWrap {display:table; width:100%;}
-.memberWrap > .member-box {display:table-cell; text-align:center; vertical-align:top;}
+.memberWrap {
+	display: flex;
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.hsIcon {
+	margin-top: 50px;
+}
+
+#grHouse {
+	display: flex;
+	justify-content: flex-start;
+}
+.grDiv {
+	width: 150px;
+    height: 200px;
+	margin-right: 5px;
+	text-align: center;
+}
+
+
+#slHouse {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+.slDiv {
+	width: 150px;
+    height: 200px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+#rvHouse {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 20px;
+}
+.rvDiv {
+	width: 150px;
+    height: 200px;
+	margin-right: 5px;
+	text-align: center;
+}
+
+#hfHouse {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+.hfDiv {
+	width: 150px;
+    height: 200px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.charImg {
+	border: 1px solid gray;
+}
+
+.imgThumb {
+	position: absolute;
+    width: 150px;
+    height: 200px;
+}
+
+.crName {
+	z-index: 1001;
+    color: white;
+    position: absolute;
+    width: 150px;
+    margin-top: 170px;
+    text-align: center;
+	font-family: GowunBatang-Bold;
+}
+/* .memberWrap {display:table; width:100%;} */
+/* .memberWrap > .member-box {display:table-cell; text-align:center; vertical-align:top;}
 .member-list {text-align:center;}
 .member-list li {display:inline-block; vertical-align:top; margin:5px;}
 .member-list .item {display:block; position:relative; padding:0;}
@@ -61,7 +162,7 @@
 @media all and (max-width:800px) {
 	.memberWrap,
 	.memberWrap > .member-box {display:block;}
-}
+} */
 
 
 /****************************************************
@@ -138,6 +239,7 @@
 
 
 /* 커스텀 css */
+
 .fix-layout {
 	max-width: 100%;
 }
@@ -175,6 +277,7 @@
 	width: 67px;
 	display: flex;
     justify-content: space-between;
+	font-family: GowunBatang-Bold;
 }
 
 #app {
@@ -192,6 +295,8 @@
 
 #app p {
 	margin: 10px;
+	font-family: KoPubDotumMedium;
+    font-size: 14px;
 }
 
 
@@ -206,6 +311,16 @@
 	-ms-overflow-style: none;
 }
 
+#per p {
+	font-family: KoPubDotumMedium;
+    font-size: 14px;
+}
+
+#etc p {
+	font-family: KoPubDotumMedium;
+    font-size: 14px;
+}
+
 #per::-webkit-scrollbar{ display:none; }
 #etc::-webkit-scrollbar{ display:none; }
 
@@ -213,6 +328,7 @@
 	width: 95%;
     margin-top: 10px;
     font-size: 17px;
+	font-family: GowunBatang-Bold;
 }
 
 #say {
@@ -224,8 +340,10 @@
     height: 60px;
     border-radius: 4px;
     font-size: 15px;
+    text-align: center;
     padding: 3px;
     word-break: break-word;
+	font-family: GowunBatang-Bold;
 }
 
 #houseAndName {
@@ -248,12 +366,14 @@
 #krName {
 	padding-top: 26px;
     font-size: 45px;
+	font-family: HeirofLightRegular;
 }
 
 #enName {
 	padding-top: 30px;
     font-size: 20px;
     word-break: break-word;
+	font-family: GowunBatang-Bold;
 }
 
 #otherEtc {
@@ -413,7 +533,10 @@
     margin-top: -100px;
 	display: none;
 	overflow: scroll;
+	-ms-overflow-style: none;
 }
+
+.modal_relation::-webkit-scrollbar{ display:none; }
 
 .modal_relation li {
 	margin: 20px;
@@ -464,3 +587,26 @@
 }
 
 #invenBox::-webkit-scrollbar{ display:none; }
+
+
+#modal_clothes {
+	position: fixed;
+	background-color: rgb(255 255 255 / 50%);
+	width: 200px;
+	height: 100%;
+	z-index: 999;
+	margin-top: -99px;
+	overflow: scroll;
+	display: none;
+	margin-left: 550px;
+	-ms-overflow-style: none;
+}
+
+#modal_clothes::-webkit-scrollbar{ display:none; }
+
+#clList {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+	width: 100%;
+}

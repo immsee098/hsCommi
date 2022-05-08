@@ -1,6 +1,8 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가 
 add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/closet.css">', 0);
+
 
 ?>
 
@@ -231,11 +233,20 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 			<div id="invenBox"><? include(G5_PATH."/inventory/list.inc.php"); ?></div>
 		</div>
 
+
 		<div id="modal_clothes">
-			<a href="<?=G5_URL?>/member/closet.php?ch_id=<?=$ch['ch_id']?>" onclick="window.open(this.href, 'big_viewer', 'width=800 height=800 menubar=no status=no toolbar=no location=no scrollbars=yes resizable=yes'); return false;" class="ui-btn ico point camera circle big">
-				
-			</a>
+			<div id="clList">
+				<?for($i=0; $i < count($cl); $i++) {?>
+					<li class="swiper-slide">
+						<a href="<?=$cl[$i]['cl_path']?>" onclick="window.open(this.href, 'big_viewer', 'width=500 height=800 menubar=no status=no toolbar=no location=no scrollbars=yes resizable=yes'); return false;" style="background-image:url(<?=$cl[$i]['cl_path']?>);">
+						<img src="<?=$cl[$i]['cl_path']?>" style="width:50%">
+						<!-- <?=$cl[$i]['cl_subject']?> -->
+						</a>
+					</li>
+				<?}?>
+			</div>
 		</div>
+
 	</div>
 
 	<!-- 본 컨텐츠 -->
@@ -339,6 +350,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 		musicOn();
 		changeRelation();
 		showInventory();
+		showClothes();
 
 		//"bgm_frame".location="<?=G5_URL?>/bgm.php";
 		// $("#endBtn").trigger("click")
@@ -435,20 +447,23 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_CSS_URL.'/member.css">', 0);
 		});
 	}
 
-	// function changeRelation() {
-	// 	$("#rel").click(function() {
-	// 		let status = $("#inven").attr("class");
-	// 		if(status == "off") {
-	// 			$(".modal_relation").css("display", "inline-block");
-	// 			$("#inven").removeClass("off");
-	// 			$("#inven").addClass("on");
-	// 		} else {
-	// 			$(".modal_relation").css("display", "none");
-	// 			$("#inven").removeClass("on");
-	// 			$("#inven").addClass("off");
-	// 		}
-	// 	});
-	// }
+	function showClothes() {
+		$("#clothes").click(function() {
+			let status = $("#clothes").attr("class");
+			if(status == "off") {
+				$("#modal_clothes").css("display", "block");
+				$("#clothes").removeClass("off");
+				$("#clothes").addClass("on");
+			} else {
+				$("#modal_clothes").css("display", "none");
+				$("#clothes").removeClass("on");
+				$("#clothes").addClass("off");
+			}
+		});
+	}
 </script>
+
+
+
 
 
